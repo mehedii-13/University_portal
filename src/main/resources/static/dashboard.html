@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Portal — Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <span>🎓 University Portal</span>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <!-- Nav tabs injected dynamically -->
+            </div>
+
+            <div class="nav-right">
+                <span class="user-tag" id="navUserInfo">Loading...</span>
+                <button class="btn btn-secondary btn-sm" onclick="signOut()">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;">
+            <div>
+                <h1 id="pageTitle" style="font-size: 20px; font-weight: 700; color: #0f172a;">Overview</h1>
+                <p id="pageSubtitle" style="font-size: 13px; color: #64748b; margin-top: 2px;">System summary</p>
+            </div>
+            <div id="bannerActionSlot"></div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <!-- Dynamic Content Area -->
+        <div id="contentArea"></div>
+    </main>
+
+    <!-- Simple Modal Dialog -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content" id="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Modal Title</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer" id="modalFooter"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>
