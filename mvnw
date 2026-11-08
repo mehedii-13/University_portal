@@ -94,6 +94,7 @@ fi
 
 exec "$JAVACMD" \
   $MAVEN_OPTS \
-  -jar "$WRAPPER_JAR" \
+  -classpath "$WRAPPER_JAR" \
+  "-Dmaven.multiModuleProjectDirectory=${BASE_DIR}" \
+  org.apache.maven.wrapper.MavenWrapperMain \
   "$@"
-
